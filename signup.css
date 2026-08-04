@@ -1,0 +1,42 @@
+
+.form-check{
+
+    color:#C8D2F0;
+
+}
+
+.form-check a{
+
+    color:#D56EFF;
+
+    text-decoration:none;
+
+}
+
+.form-check a:hover{
+
+    color:#fff;
+
+}
+
+.toggle-confirm{
+
+    position:absolute;
+
+    right:18px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    cursor:pointer;
+
+    color:#C8D2F0;
+
+}
+
+.toggle-confirm:hover{
+
+    color:#D56EFF;
+
+}
