@@ -149,6 +149,44 @@ body{
     color:#fff;
 
 }
+.sidebar-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:998;
+
+}
+body.sidebar-open{
+
+    overflow:hidden;
+
+    height:100vh;
+
+}
+
+.sidebar-overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.sidebar{
+
+    z-index:999;
+
+}
 
 
 
@@ -554,6 +592,12 @@ font-size:26px;
     font-size:28px;
 
 }
+#welcomeUser{
+    font-size: 20px;
+}
+#welcome{
+    font-size: 20px;
+}
 
 .purple{
 
@@ -777,7 +821,6 @@ color:#D56EFF;
 
 }
 
-/* Activity */
 
 .activity-item{
 
