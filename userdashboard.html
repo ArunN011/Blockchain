@@ -70,7 +70,7 @@
         <li class="nav-item">
 
             <a class="nav-link active"
-               href="#">
+               href="userdashboard.html">
 
                 <i class="fa-solid fa-house"></i>
 
@@ -148,7 +148,7 @@
         <li class="nav-item mt-auto">
 
             <a class="nav-link logout-btn"
-               href="#">
+               href="login.html">
 
                 <i class="fa-solid fa-right-from-bracket"></i>
 
@@ -166,7 +166,8 @@
 
 <div class="offcanvas offcanvas-start sidebar-mobile"
      tabindex="-1"
-     id="mobileSidebar">
+     id="mobileSidebar"  data-bs-scroll="false"
+     data-bs-backdrop="true">
 
     <div class="offcanvas-header">
 
@@ -174,7 +175,9 @@
              width="150">
 
         <button class="btn-close btn-close-white"
-                data-bs-dismiss="offcanvas">
+                data-bs-dismiss="offcanvas" data-bs-dismiss="offcanvas"
+                aria-label="Close"
+   >
 
         </button>
 
@@ -337,7 +340,7 @@ Blockchain Portfolio
 
 </span>
 
-<h1>
+<h1 id="welcome">
 
 Welcome Back,
 
@@ -1050,18 +1053,13 @@ Claim Rewards
 </section>
 
 
-
-<!--==================================
-News + Activity
-===================================-->
-
 <section class="mt-5 mb-5">
 
 <div class="container-fluid">
 
 <div class="row g-4">
 
-<!-- News -->
+
 
 <div class="col-lg-6">
 
@@ -1165,7 +1163,6 @@ Web3 Adoption Increased
 
 </div>
 
-<!-- Activity -->
 
 <div class="col-lg-6">
 
@@ -1601,7 +1598,58 @@ card.style.transition=".7s ease";
 cardObserver.observe(card);
 
 });
+const sidebar = document.querySelector(".sidebar");
+const overlay = document.querySelector(".sidebar-overlay");
+const menuToggle = document.querySelector(".menu-toggle");
 
+function openSidebar() {
+
+    sidebar.classList.add("active");
+    overlay.classList.add("active");
+
+   
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+
+}
+
+function closeSidebar() {
+
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+
+    
+    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
+
+}
+
+menuToggle.addEventListener("click", openSidebar);
+
+overlay.addEventListener("click", closeSidebar);
+
+window.addEventListener("resize", function () {
+
+    if (window.innerWidth > 991) {
+
+        closeSidebar();
+
+    }
+
+});
+const mobileSidebar = document.getElementById("mobileSidebar");
+
+mobileSidebar.addEventListener("show.bs.offcanvas", function () {
+
+    document.body.classList.add("sidebar-open");
+
+});
+
+mobileSidebar.addEventListener("hidden.bs.offcanvas", function () {
+
+    document.body.classList.remove("sidebar-open");
+
+});
 </script>
 
 </body>
